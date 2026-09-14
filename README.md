@@ -49,9 +49,16 @@ Nos 10 dígitos manuscritos pelo autor (`data/meus_digitos/`), o melhor modelo (
 
 ## Melhorias futuras
 
-<!-- TODO (você escreve): pelo menos 2-3 melhorias concretas — ex.: testar uma CNN, usar
-data augmentation, calibrar as probabilidades, aumentar a base de dígitos manuscritos
-próprios, etc. Esse tópico também é cobrado no vídeo (item 5 do roteiro). -->
+- Usar uma **CNN** (rede neural convolucional), feita especificamente para imagens — tende a
+  superar a MLP simples usada aqui nesse tipo de tarefa.
+- **Data augmentation**: gerar variações artificiais dos dígitos de treino (pequenas rotações,
+  deslocamentos, mudanças de espessura do traço) para melhorar a robustez do modelo.
+- **Early stopping** no treino da MLP: a curva de loss mostra que a validação para de melhorar
+  por volta da época 7, então rodar as 15 épocas completas já introduz algum overfitting.
+- Coletar mais dígitos manuscritos próprios — 10 imagens (uma por classe) é uma amostra pequena
+  para um teste estatisticamente confiável.
+- Calibrar as probabilidades do modelo ou adicionar uma forma explícita de rejeição ("não sei"),
+  para mitigar o problema de falsa confiança (overconfidence) observado no teste OOD.
 
 ## Vídeo de demonstração
 
